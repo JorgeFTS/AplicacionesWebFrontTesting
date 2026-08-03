@@ -72,7 +72,7 @@ async function processReservationsWithPricing(reservations) {
     if (reservation.technicianId) {
       try {
         // Fetch technician details to get their actual hourly rate
-        const response = await fetch(`https://chambapro-platform-production.up.railway.app/api/v1/users/${reservation.technicianId}`, {
+        const response = await fetch(`http://localhost:5214/api/v1/users/${reservation.technicianId}`, {
           headers: {
             'Authorization': `Bearer ${authStore.token}`,
             'Content-Type': 'application/json'
