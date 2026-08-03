@@ -2,7 +2,7 @@
 
 export class HistoryServicesApi {
     constructor() {
-        this.baseURL = 'https://chambapro-platform-production.up.railway.app';
+        this.baseURL = 'http://localhost:5214';
         this.authStore = useAuthStore();
     }
 

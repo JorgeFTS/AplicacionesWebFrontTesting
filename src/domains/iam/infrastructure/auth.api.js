@@ -2,7 +2,7 @@
 
 export class AuthApi {
     constructor() {
-        this.baseURL = 'https://chambapro-platform-production.up.railway.app';
+        this.baseURL = 'http://localhost:5214';
     }
 
     async login(email, password, userType) {
