@@ -1,6 +1,7 @@
-﻿export class TechnicianApi {
+﻿import { API_BASE_URL } from '../../../shared/config/api.config.js';
+export class TechnicianApi {
     constructor() {
-        this.baseURL = 'http://localhost:5214';
+        this.baseURL = API_BASE_URL;
     }
 
     getAuthHeaders() {

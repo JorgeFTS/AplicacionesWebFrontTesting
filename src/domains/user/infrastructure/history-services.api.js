@@ -1,8 +1,9 @@
-﻿import { useAuthStore } from '../../iam/stores/auth.store.js';
+﻿import { API_BASE_URL } from '../../../shared/config/api.config.js';
+import { useAuthStore } from '../../iam/stores/auth.store.js';
 
 export class HistoryServicesApi {
     constructor() {
-        this.baseURL = 'http://localhost:5214';
+        this.baseURL = API_BASE_URL;
         this.authStore = useAuthStore();
     }
 
