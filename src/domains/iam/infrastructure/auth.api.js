@@ -1,8 +1,9 @@
-﻿import { extractUserFromToken } from '../utils/jwt.util.js';
+﻿import { API_BASE_URL } from '../../../shared/config/api.config.js';
+import { extractUserFromToken } from '../utils/jwt.util.js';
 
 export class AuthApi {
     constructor() {
-        this.baseURL = 'http://localhost:5214';
+        this.baseURL = API_BASE_URL;
     }
 
     async login(email, password, userType) {

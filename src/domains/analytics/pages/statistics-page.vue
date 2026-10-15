@@ -4,6 +4,7 @@ import { useI18n } from 'vue-i18n';
 import { useAuthStore } from '../../iam/stores/auth.store.js';
 import { ReserveApi } from '../../service/infrastructure/reserve.api.js';
 import { ReviewsApi } from '../../user/infrastructure/reviews.api.js';
+import { API_BASE_URL } from '../../../shared/config/api.config.js';
 
 import MonthlyIncomeChart from '../components/monthly-income-chart.component.vue';
 import RatingsChart from '../components/ratings-chart.component.vue';
@@ -72,7 +73,7 @@ async function processReservationsWithPricing(reservations) {
     if (reservation.technicianId) {
       try {
         // Fetch technician details to get their actual hourly rate
-        const response = await fetch(`http://localhost:5214/api/v1/users/${reservation.technicianId}`, {
+        const response = await fetch(`${API_BASE_URL}/api/v1/users/${reservation.technicianId}`, {
           headers: {
             'Authorization': `Bearer ${authStore.token}`,
             'Content-Type': 'application/json'
