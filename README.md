@@ -1,6 +1,6 @@
 # ChambaPro — Frontend
 
-[![Frontend CI](https://github.com/JorgeFTS/AplicacionesWebFrontTesting/actions/workflows/ci.yml/badge.svg)](https://github.com/JorgeFTS/AplicacionesWebFrontTesting/actions/workflows/ci.yml)
+[![Frontend CI](https://github.com/JorgeFTS/frontend-chambapro/actions/workflows/ci.yml/badge.svg)](https://github.com/JorgeFTS/frontend-chambapro/actions/workflows/ci.yml)
 
 Aplicación web de **ChambaPro**, una plataforma que conecta clientes con técnicos. Los clientes buscan técnicos, ven su perfil y reseñas y contratan servicios; los técnicos gestionan su agenda de reservas y ven sus estadísticas.
 
