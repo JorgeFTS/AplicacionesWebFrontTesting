@@ -1,0 +1,58 @@
+name: Frontend CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # 1) Instala dependencias y compila la app
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      # TODO (semana 2, parte QA): aquí irán los tests unitarios con Vitest
+      #   - name: Tests unitarios
+      #     run: npm test
+
+      - name: Build de producción
+        run: npm run build
+        env:
+          VITE_API_BASE_URL: https://api.example.invalid/
+
+  # 2) Comprueba que el Dockerfile sigue construyendo bien (no publica nada)
+  docker:
+    name: Validar imagen Docker
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: docker/setup-buildx-action@v4
+
+      - name: Construir imagen (sin publicar)
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: false
+          tags: chambapro-frontend:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
