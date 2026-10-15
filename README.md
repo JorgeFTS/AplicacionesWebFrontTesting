@@ -1,5 +1,7 @@
 # ChambaPro — Frontend
 
+[![Frontend CI](https://github.com/JorgeFTS/frontend-chambapro/actions/workflows/ci.yml/badge.svg)](https://github.com/JorgeFTS/frontend-chambapro/actions/workflows/ci.yml)
+
 Aplicación web de **ChambaPro**, una plataforma que conecta clientes con técnicos. Los clientes buscan técnicos, ven su perfil y reseñas y contratan servicios; los técnicos gestionan su agenda de reservas y ven sus estadísticas.
 
 > **Estado:** en desarrollo. Estoy agregando la capa de calidad y DevOps: tests unitarios y E2E, CI con GitHub Actions, Docker y despliegue en Azure.
@@ -50,7 +52,7 @@ Para otro backend: `VITE_API_BASE_URL=https://mi-api/ docker compose up --build`
 ## Roadmap DevOps / QA
 
 - [x] URL del backend por variable de entorno
-- [ ] Dockerfile con nginx (escrito, pendiente de probar)
+- [x] Dockerfile con nginx
 - [ ] Tests unitarios (Vitest + Vue Test Utils)
 - [ ] Tests E2E (Playwright)
 - [ ] CI con GitHub Actions (build + tests)
